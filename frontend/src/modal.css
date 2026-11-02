@@ -1,0 +1,14 @@
+.modal textarea {
+  background: #16171d;
+  border: 1px solid #3b3c47;
+  border-radius: 7px;
+  color: white;
+  padding: 10px;
+  font: inherit;
+}
+
+.modal .text-entry {
+  height: 180px;
+  resize: vertical;
+  white-space: pre-wrap;
+}
