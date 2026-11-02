@@ -15,7 +15,7 @@ def create_app(data_dir: Path | None = None) -> FastAPI:
     root = data_dir or Path(os.environ.get("RESEARCH_STUDIO_DATA_DIR", Path(__file__).parents[1] / "data"))
     service = SourceService(Database(root))
     app = FastAPI(title="Research Studio AI", version="0.1.0")
-    origins = ["http://127.0.0.1:5173", "http://localhost:5173"]
+    origins = ["http://127.0.0.1:5173", "http://localhost:5173", "https://research-studio-ai-brown.vercel.app"]
     if extra_origin := os.environ.get("RESEARCH_STUDIO_EXTRA_CORS_ORIGIN"):
         origins.append(extra_origin)
     app.add_middleware(CORSMiddleware, allow_origins=origins,allow_credentials=False, allow_methods=["*"], allow_headers=["*"])

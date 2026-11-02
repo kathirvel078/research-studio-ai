@@ -1,5 +1,5 @@
 import type { Answer, Source, SourceDetail } from "./types";
-const base = "http://127.0.0.1:8000/api";
+const base = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000/api";
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
   const response = await fetch(`${base}${path}`, init);
   if (!response.ok) {
